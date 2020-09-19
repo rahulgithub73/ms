@@ -4,16 +4,17 @@ phases:
   install:
     runtime-versions:
       java: corretto8
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...  
+      - cd MS1      
   build:
     commands:
       - echo Build started on `date`
-      - cd MS1
-      - mvn test 
+      - mvn install 
   post_build:
     commands:
       - echo Build completed on `date`
-      - cd MS1
-      - mvn package
 artifacts:
   files:
     - target/ms1.jar
