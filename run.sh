@@ -1,2 +1,3 @@
 #!/bin/bash
-java -jar /myproject-0.0.1-SNAPSHOT.jar
+
+sudo java -jar /myproject-0.0.1-SNAPSHOT.jar
