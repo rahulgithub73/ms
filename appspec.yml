@@ -1,5 +1,16 @@
 version: 0.0
 os: linux
 files:
-  - source: ./myproject-0.0.1-SNAPSHOT.jar
-    destination: /tmp
+  - source: /myproject-0.0.1-SNAPSHOT.jar
+    destination: /tmp/
+permissions:
+  - object: /
+    pattern: "**"
+    owner: root
+    group: root
+
+hooks:
+  ApplicationStart:
+    - location: run.sh
+      timeout: 60
+      runas: root    
